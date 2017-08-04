@@ -1,5 +1,5 @@
 # SpeedofSound
-This is the code I used for calculating the speed of sound with a simple circuit consisting of the ultrasonic sensor
+This is the code I used for calculating the speed of sound with a simple circuit
 
 This mini project is a simple circuit using the arduino software that consist only of the
           ultrasonic sensor component, jumper wires and UNO R3 microcontroller.
