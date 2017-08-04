@@ -1,0 +1,35 @@
+
+
+int trigPin=13; //Trigger Pin is connected to pin 13
+int echoPin=11;  //Echo Pin is connected to pin 11
+float pingTime;
+float speedOfSound;
+int targetDistance=6; //Distance Inches
+void setup() {
+  
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+}
+
+void loop() {
+  
+  digitalWrite(trigPin, LOW); 
+  delayMicroseconds(2000); 
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10); 
+  digitalWrite(trigPin, LOW); 
+  
+  pingTime = pulseIn(echoPin, HIGH);  //this is in microseconds
+ 
+  speedOfSound = (targetDistance*2)/pingTime*(1000000)*3600/63360;        //conversion
+  Serial.print("The Speed of Sound is: ");
+  Serial.print(speedOfSound);
+  Serial.println(" miles per hour");
+  delay(1000);
+  
+}
+
+//Thank you to Top Tech Boy for this inspiration & as one of my references //
+//Also to Arduino Playground as one of my references as well//
